@@ -1,7 +1,8 @@
 require 'docking_station'
 
-describe DockingStation do 
-  it "should release a Bike object" do
+describe DockingStation do
+  docking_station = DockingStation.new
+  it "Respond to release_bike" do
+    docking_station.release_bike
   end
-  
 end
