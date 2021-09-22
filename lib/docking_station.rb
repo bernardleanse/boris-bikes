@@ -5,6 +5,7 @@ class DockingStation
   end
 
   def release_bike
+    raise Exception.new "There are no bikes to undock" if @docked_bikes.empty?
     return Bike.new
   end
 
