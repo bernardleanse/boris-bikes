@@ -6,11 +6,17 @@ class DockingStation
 
   def release_bike
     raise Exception.new "There are no bikes to undock" if @docked_bikes.empty?
-    return Bike.new
+    return @docked_bikes.pop
   end
 
   def dock_bike(bike)
-    raise RuntimeError if @docked_bikes.length == 1
+    raise RuntimeError if full?
     @docked_bikes << bike
   end
+
+  private
+  def full?
+    return @docked_bikes.length >= 20
+  end
+
 end
