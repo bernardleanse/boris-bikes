@@ -10,6 +10,7 @@ class DockingStation
   end
 
   def dock_bike(bike)
+    raise RuntimeError if @docked_bikes.length == 1
     @docked_bikes << bike
   end
 end

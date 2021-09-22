@@ -29,5 +29,13 @@ describe DockingStation do
     dock = DockingStation.new
     expect {dock.release_bike}.to raise_error("There are no bikes to undock")
   end
+
+  it "should raise error if docking bike to full dock (dock size = 1)" do
+    dock = DockingStation.new
+    dock.dock_bike(Bike.new)
+    expect {dock.dock_bike(Bike.new)}.to raise_error RuntimeError 
+  end
+
+
   
 end
